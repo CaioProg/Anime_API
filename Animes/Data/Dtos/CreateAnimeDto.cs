@@ -16,11 +16,11 @@ namespace Animes.Data.Dtos
         public string Autor { get; set; }
 
 
-        [Required(ErrorMessage = "O campo Número de Episodios é obrigatório")]
-        public int Episodios { get; set; }
+        [Required(ErrorMessage = "O campo Número Episodios é obrigatório")]
+        public int NumeroEpisodios { get; set; }
+
 
         [Required(ErrorMessage = "O campo Resumo é obrigatório")]
         public string Resumo { get; set; }
-
     }
 }

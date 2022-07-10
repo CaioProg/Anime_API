@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "L7pNEyTOLekJb94gxWvPHxzhPz1Kg+WljFYezylBOf6mTGr9NTrl3WtiKNu2tl1gd4nijOwHUDKVYeqMWZloTw==",
+  "dgSpecHash": "VIA6VqoroLE4xdaK/A1pKG5AKApSLN8HMvukWEgGI6xOBI15CZuGEM334QY+fUeYzY4pjgiv1o5U7jPD6uIt6A==",
   "success": true,
   "projectFilePath": "C:\\Workspace\\Animes\\Animes\\Animes.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\CaioLucas\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",
+    "C:\\Users\\CaioLucas\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\11.0.0\\automapper.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",
     "C:\\Users\\CaioLucas\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\CaioLucas\\.nuget\\packages\\microsoft.aspnetcore.authentication.core\\2.2.0\\microsoft.aspnetcore.authentication.core.2.2.0.nupkg.sha512",
     "C:\\Users\\CaioLucas\\.nuget\\packages\\microsoft.aspnetcore.authorization\\2.2.0\\microsoft.aspnetcore.authorization.2.2.0.nupkg.sha512",

@@ -1,4 +1,7 @@
-﻿using AutoMapper;
+﻿using Animes.Data;
+using Animes.Data.Dtos;
+using Animes.Models;
+using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 
 
@@ -12,63 +15,64 @@ namespace Animes.Controllers
         private AnimeContext _context;
         private IMapper _mapper;
 
-        public FrutaController(FrutaContext context, IMapper mapper)
+        public AnimeController(AnimeContext context, IMapper mapper)
         {
             _context = context;
             _mapper = mapper;
         }
 
         [HttpPost]
-        public IActionResult AdicionaFruta([FromBody] CreateFrutaDto frutaDto)
+        public IActionResult AdicionaAnime([FromBody] CreateAnimeDto animeDto)
         {
-            Fruta fruta = _mapper.Map<Fruta>(frutaDto);
+            Anime anime = _mapper.Map<Anime>(animeDto);
 
-            _context.Frutas.Add(fruta);
+            _context.Animes.Add(anime);
             _context.SaveChanges();
-            return CreatedAtAction(nameof(RecuperaFrutasPorId), new { Id = fruta.Id }, fruta);
+            return CreatedAtAction(nameof(RecuperaAnimesPorId), new { Id = anime.Id }, anime);
         }
 
         [HttpGet]
-        public IEnumerable<Fruta> RecuperaFrutas()
+        public IEnumerable<Anime> RecuperaAnimes()
         {
-            return _context.Frutas;
+            return _context.Animes;
         }
 
         [HttpGet("{id}")]
-        public IActionResult RecuperaFrutasPorId(int id)
+        public IActionResult RecuperaAnimesPorId(int id)
         {
-            Fruta fruta = _context.Frutas.FirstOrDefault(fruta => fruta.Id == id);
-            if (fruta != null)
+            Anime anime = _context.Animes.FirstOrDefault(anime => anime.Id == id);
+            if (anime != null)
             {
-                ReadFrutaDto frutaDto = _mapper.Map<ReadFrutaDto>(fruta);
-                return Ok(frutaDto);
+                ReadAnimeDto animeDto = _mapper.Map<ReadAnimeDto>(anime);
+                return Ok(animeDto);
             }
             return NotFound();
         }
 
         [HttpPut("{id}")]
-        public IActionResult AtualizaFruta(int id, [FromBody] UpdateFrutaDto frutaDto)
+        public IActionResult AtualizaAnime(int id, [FromBody] UpdateAnimeDto animeDto)
         {
-            Fruta fruta = _context.Frutas.FirstOrDefault(fruta => fruta.Id == id);
-            if (fruta == null)
+            Anime anime = _context.Animes.FirstOrDefault(anime => anime.Id == id);
+            if (anime == null)
             {
                 return NotFound();
             }
-            _mapper.Map(frutaDto, fruta);
+            _mapper.Map(animeDto, anime);
             _context.SaveChanges();
             return NoContent();
         }
 
         [HttpDelete("{id}")]
-        public IActionResult DeletaFruta(int id)
+        public IActionResult DeletaAnime(int id)
         {
-            Fruta fruta = _context.Frutas.First(fruta => fruta.Id == id);
-            if (fruta == null)
+            Anime anime = _context.Animes.First(anime => anime.Id == id);
+            if (anime == null)
             {
                 return NotFound();
             }
-            _context.Remove(fruta);
+            _context.Remove(anime);
             _context.SaveChanges();
             return NoContent();
         }
+    }
 }

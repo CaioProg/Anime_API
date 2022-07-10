@@ -1,14 +1,15 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Animes.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace Animes.Data
 {
-    public class FrutaContext : DbContext
+    public class AnimeContext : DbContext
     {
-        public FrutaContext(DbContextOptions<FrutaContext> options) : base(options)
+        public AnimeContext(DbContextOptions<AnimeContext> options) : base(options)
         {
 
         }
 
-        public DbSet<Fruta> Frutas { get; set; }
+        public DbSet<Anime> Animes { get; set; }
     }
 }
